@@ -1,0 +1,158 @@
+@charset "utf-8";
+/* CSS Document */
+body 
+{
+background-color:#0088CA;	
+margin:20px 6% 20px 6%;
+}
+
+.body-container
+{
+	background-color:white;
+	min-height:520px;
+	
+}
+.upcoming-event
+{
+	display:inline-block;
+	width:25%;
+	padding:20px;
+	max-height:520px;
+}
+._event
+{
+	overflow-y: auto;
+	max-height:390px;
+}
+.calendar-content
+{
+	width:75%;
+	float:right;
+	padding:20px;
+}
+/*.middle 
+{
+	color:#CCC;
+	text-align:center;
+}*/
+
+.calendar-display
+{
+	hight:80%;
+	background-color:#F4F4FF;	
+	padding:30px;
+	
+}
+
+
+.calendar-table
+{
+	width:100%;	
+}
+
+.calendar-table td
+{
+	border:1px solid #CCCCCC;
+	padding:17px;	
+	font-size:16px;
+	text-align:center;
+}
+
+.calendar-table th
+{
+	text-align:center;
+	color:red;
+}
+
+.cell
+{
+	background-color:white;	
+}
+.cell:hover
+{
+	background-color:#F4F4FF
+}
+.header .calendar-header
+{
+	width:100%;
+	font-size:24px;
+	text-align:center;
+}
+.middle 
+{
+	text-align:center;	
+}
+.left
+{
+	text-align:left;
+	font-size:18px;
+		
+}
+.left i
+{
+	color:red;
+	cursor:pointer;
+}
+.right
+{
+	text-align:right;
+	padding-right:20px;
+}
+.right i
+{
+	
+color:red;
+	cursor:pointer;	
+}
+
+.year
+{
+	font-weight:bold;
+	color:gray;
+}
+
+.event{
+	padding:20px;
+	}
+.f{
+	padding-bottom:20px;
+	}
+.f2{
+	padding-bottom:10px;
+	}
+.f3{
+	padding-right:20px;
+	}
+	
+.modal-body {
+    max-height:500px;
+    overflow-y: auto;
+}
+
+
+.clear{
+	clear:both;
+	}
+	
+.getEvent
+{
+	
+	margin:20px;
+	list-style-type:none;
+	font-size:15px;
+	font-family:"Lucida Sans Unicode", "Lucida Grande", sans-serif;	
+	padding:20px;
+	border-radius:5px;
+	border-style:outset;
+	/*background-color:#8080FF;*/
+	background-color:#0088CA;
+	
+}
+.getEvent a
+{
+	color:#DBDBDB;	
+}
+.time
+{
+	float:right;	
+}
