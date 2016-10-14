@@ -23,25 +23,23 @@ function showCalendar(year,month){
 		});
 	}
 	
-function retrivedata (e){
+function retrivedata (u, t, d, h, m, de){
 	$.ajax({
 		type:'POST',
-		url:'retrive.php',
-		data:"e="+e,
+		url:'handler.php',
+		data:"action=retrive&u="+u+"&t="+t+"&d="+d+"&h="+h+"&m="+m+"&de="+de,
 		success: function(res){
-			$(".event").html(res);
+			$(".nEvent").html(res);
 			}
 		});
 	}
 	
-function Event(user, title, date, hour, minute, details){
+function edit(u, t, d, h, m, de){
 	$.ajax({
 		type:'POST',
-		url:'event_handler.php',
-		data:"user="+user+"&title="+title+"&date="+date+"&hour="+hour+"&minute="+minute+"&details="+details,
+		url:'handler.php',
+		data:"action=edit&u="+u+"&t="+t+"&d="+d+"&h="+h+"&m="+m+"&de="+de,
 		success: function(res){
-			$(".calendar-content").html("");
-			$(".calendar-content").html(res);
 			}
 		})
 	}
@@ -68,12 +66,12 @@ tinymce.init({
 		});
 });
 
-$(document).ready(function() {
-$(".cell").on('click',function(){
-	$(".calendar-content").css("opacity","0.3"),
-	$(".calendar-content").html();
-	});
+//$(document).ready(function() {
+//$(".cell").on('click',function(){
+//	$(".calendar-content").css("opacity","0.3"),
+//	$(".calendar-content").html();
+//	});
     
-});
+//});
 	
 	

@@ -82,48 +82,50 @@ class events {
 			$this->minute = $e['minute'];
 			$this->details = $e['details'];
 			
+			
 			$allEvents .='<div class="getEvent">';
-			$allEvents .= '<li onclick="javascript:retrivedata('.array($e['user'], $e['title']).');" data-toggle="modal" data-target="#myModal2"><a class="title">'.$e['title'].'</a><a class="time"><i class="fa fa-clock-o" aria-hidden="true"></i> '.$e['date'].'</a></li></div>';
+			$allEvents .= '<li onclick="javascript:retrivedata(\''.$e['user'].'\',\''.$e['title'].'\' ,\''.$e['date'].'\' ,'.$e['hour'].' ,'.$e['minute'].' ,\''.$e['details'].'\');" data-toggle="modal" data-target="#myModal2"><a class="title">'.$e['title'].'</a><a class="time"><i class="fa fa-clock-o" aria-hidden="true"></i> '.$e['date'].'</a></li></div>';
 		}
 		
 		return $allEvents;
 		}
 	
-	function retriveEvent($user){
+	function retriveEvent($user, $title, $date, $hour, $minute, $details){
 		
-	echo '<div class="form-inline f">
+	echo ' <form class="event" action="event_handler.php" method="post">
+        	<div class="form-inline f">
  				<div class="form-group">
     				<label for="user">User</label><br />
-   					<input type="text" class="form-control" id="user" name="user" value="'.$user[0].'" >
+   					<input type="text" class="form-control" id="user" name="user" value="'.$user.'" >
   				</div>
 			</div>
  
 			<div class="form-group f2">
     			<label for="title">Title</label>
-    			<input type="text" class="form-control" id="title" name="title" value="'.$user[1].'" >
+    			<input type="text" class="form-control" id="title" name="title" value="'.$title.'" >
              </div>
   
   
  			<div class="form-inline f">
 				<div class="form-group f3">
 					<label for="date">Date</label><br />
-    				<input type="text" class="form-control" id="date" placeholder="2016-10-20" required name="date">
+    				<input type="date" class="form-control" id="date" placeholder="2016-10-20" required name="date" value="'.$date.'">
   				</div>
   
 				<div class="form-group f3">
 					<label for="hour">Hour</label><br />
-    				<input type="number" class="form-control" id="hour" placeholder="00" name="hour">
+    				<input type="number" class="form-control" id="hour" placeholder="00" name="hour" value="'.$hour.'">
   				</div>
   
  	 			<div class="form-group f3">
     				<label for="minute">Minute</label><br />
-    				<input type="number" class="form-control" id="minute" placeholder="00" name="minute">
+    				<input type="number" class="form-control" id="minute" placeholder="00" name="minute" value="'.$minute.'">
   				</div>
   			</div>
   
  			<div class="form-group f2">
 				<label for="details">Details </label>
-  				<textarea class="form-control" id="details" name="details"></textarea>
+  				<textarea class="form-control" id="details" name="details">'.$details.'</textarea>
   			</div>
   
  		 	
@@ -132,7 +134,8 @@ class events {
   			</button>
  			<button type="submit" class="btn btn-success btn-default"><span class="glyphicon glyphicon-floppy-disk"></span> Update 
   			</button>
-        </div>';
+        </div>
+		</form>';
 		
 		}
 	
@@ -150,7 +153,7 @@ class events {
 		$pdoRes->bindParam(":details", $details);
 		
 		$pdoRes->execute();
-		
+		echo $user;
 		
 		}
 	
