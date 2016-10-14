@@ -181,10 +181,13 @@
           <button type="button" class="close" data-dismiss="modal">&times;</button>
           <h4 class="modal-title">Edit Event</h4>
         </div>
-        <div class="modal-body nEvent">
+        <div class="modal-body">
         
         <!-- Form content -->
-      
+         <form class="event">
+
+		
+        </form>
         <!-- end form -->
       </div>
     </div>
