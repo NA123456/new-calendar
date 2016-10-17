@@ -27,7 +27,7 @@ class calendar{
 		$this->daysInMonth= date('t',strtotime($year.'-'.$month.'-01'));
 		
 		$calendar = $this->create_header().
-					'<div class="calendar-display table-responsive">
+					'<div class="calendar-display">
 					<table class="calendar-table">
 						<tr>';
 							foreach($this->dayLabels as $day){
@@ -43,8 +43,6 @@ class calendar{
 		else{
 			$weeksInMonth = 5;
 			}
-			
-		$calendar .= '<div class="clear"></div>';
 			
 		$dayCounter =1;
 			
@@ -72,9 +70,8 @@ class calendar{
 				}
 			$calendar .= '</tr>';
 			}
-		$calendar .='<div class="clear"></div>';	
 		$calendar .='</table> 
-					</div>';
+					</div> </div></div>';
 					
 					echo $calendar;
 		}	
