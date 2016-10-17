@@ -147,28 +147,29 @@
 </nav>
 
 <div class="body-container container-fluid">
-
-	<div class="upcoming-event">
-		<h3>Upcoming Events</h3>
-		<hr />
-       <?php
-		$_event->getUpComingEvents();
-		?>
+	    <div class="row">
+        <div class="upcoming-event col-sm-3">
+        <div class="">
+            <h3>Upcoming Events</h3>
+            <hr />
+           <?php
+            $_event->getUpComingEvents();
+            ?>
+        </div>
 	</div>
 
-
-	<div class="calendar-content container-fluid" >
-		
+        <div class="calendar-content col-sm-9" >
+            
+            
+        <?php 
+        include 'Ncalendar.php';
+        $calendar = new calendar();
+        $calendar->draw_calendar($year = date("Y",time()),$month = date("M",time()));
+        ?>
         
-    <?php 
-	include 'Ncalendar.php';
-	$calendar = new calendar();
-	$calendar->draw_calendar($year = date("Y",time()),$month = date("M",time()));
-	?>
-	
-    
+        </div>
+      
     </div>
-    
 </div>
 
 
