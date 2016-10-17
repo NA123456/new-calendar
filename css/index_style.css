@@ -15,7 +15,7 @@ margin:20px 6% 20px 6%;
 .upcoming-event
 {
 	display:inline-block;
-	width:25%;
+	
 	padding:20px;
 	max-height:520px;
 }
@@ -26,7 +26,7 @@ margin:20px 6% 20px 6%;
 }
 .calendar-content
 {
-	width:75%;
+	
 	float:right;
 	padding:20px;
 }
@@ -130,10 +130,6 @@ color:red;
 }
 
 
-.clear{
-	clear:both;
-	}
-	
 .getEvent
 {
 	
