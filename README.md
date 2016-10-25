@@ -3,4 +3,5 @@
  2. navigate between months
  3. provide add new event and store it in database
  4. display upcoming events by retrive it from database
- 5. Responsive layout. 
+ 5. Can update delete ana event or clear all events
+ 6. Responsive layout. 
