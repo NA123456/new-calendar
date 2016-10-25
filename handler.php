@@ -12,11 +12,11 @@ $calendar->draw_calendar($_POST['y'],$_POST['m']);
 break;
 
 case 'retrive':
-$e->retriveEvent($_POST['u'], $_POST['t'], $_POST['d'], $_POST['h'], $_POST['m'], $_POST['de']);
+$e->retriveEvent($_POST['u'], $_POST['id'], $_POST['t'], $_POST['d'], $_POST['h'], $_POST['m'], $_POST['de']);
 break;
 
 case 'update':
-$e->edit_event($_POST['u'], $_POST['t'], $_POST['d'], $_POST['h'], $_POST['m'], $_POST['de']);
+$e->edit_event($_POST['u'], $_POST['id'], $_POST['t'], $_POST['d'], $_POST['h'], $_POST['m'], $_POST['de']);
 break;
 }
 

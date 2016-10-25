@@ -20,7 +20,8 @@
  <?php
 		include "events.php";
 		$_event = new events();
-		?>
+?>
+
 
 <!-- Modal -->
   <div class="modal fade" id="myModal" role="dialog">
@@ -72,7 +73,7 @@
   
  		 	
         <div class="modal-footer">
- 			<button type="submit" class="btn btn-danger btn-default"><span class="glyphicon glyphicon-remove"></span> Cancel 
+ 			<button type="submit" class="btn btn-danger btn-default"><span class="glyphicon glyphicon-remove"></span>Cancel 
   			</button>
  			<button type="submit" name="save" class="btn btn-success btn-default"><span class="glyphicon glyphicon-floppy-disk"></span> Save 
   			</button>
@@ -86,7 +87,7 @@
 <!-- end Modal -->
 
 
-<!-- Modal -->
+<!-- Events Modal -->
   <div class="modal fade" id="EventsModal" role="dialog">
     <div class="modal-dialog modal-lg">
       <div class="modal-content">
@@ -96,8 +97,13 @@
         </div>
         <div class="modal-body">    
         <!-- Form content -->
-         <form>
+         <form action="event_handler.php" method="post">
 			    <?php echo $_event->getAllEvents();?>
+               
+                <div class="modal-footer">
+ 				<button type="submit" name="clear" class="btn btn-danger btn-default"><span class="glyphicon glyphicon-remove"></span> Clear All
+  				</button>
+        		</div>
         </form>
         <!-- end form -->
       </div>
@@ -174,7 +180,7 @@
 
 
 
-<!-- Modal -->
+<!-- update Modal -->
   <div class="modal fade" id="myModal2" role="dialog">
     <div class="modal-dialog modal-lg">
       <div class="modal-content">

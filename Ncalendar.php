@@ -73,7 +73,7 @@ class calendar{
 		$calendar .='</table> 
 					</div> </div></div>';
 					
-					echo $calendar;
+		echo $calendar;
 		}	
 	
 	
