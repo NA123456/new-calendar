@@ -23,22 +23,28 @@ function showCalendar(year,month){
 		});
 	}
 	
-function retrivedata (u, t, d, h, m, de){
+function getDataForm(){
+	var y = document.getElementById('yy').value;
+	var m = document.getElementById('monthSelector').value;
+	showCalendar(y,m);
+	}
+	
+function retrivedata (u, id, t, d, h, m, de){
 	$.ajax({
 		type:'POST',
 		url:'handler.php',
-		data:"action=retrive&u="+u+"&t="+t+"&d="+d+"&h="+h+"&m="+m+"&de="+de,
+		data:"action=retrive&u="+u+"&id="+id+"&t="+t+"&d="+d+"&h="+h+"&m="+m+"&de="+de,
 		success: function(res){
 			$(".nEvent").html(res);
 			}
 		});
 	}
 	
-function edit(u, t, d, h, m, de){
+function edit(u, id, t, d, h, m, de){
 	$.ajax({
 		type:'POST',
 		url:'handler.php',
-		data:"action=edit&u="+u+"&t="+t+"&d="+d+"&h="+h+"&m="+m+"&de="+de,
+		data:"action=edit&u="+u+"&id="+id+"&t="+t+"&d="+d+"&h="+h+"&m="+m+"&de="+de,
 		success: function(res){
 			}
 		})
@@ -59,9 +65,9 @@ tinymce.init({
  $(document).ready(function(){
     $('#selector').popover({
 		 title:"Date Selector" ,
-		 content:'<div id="popover-content"><form action="handler.php" method="post"><div class="form-inline"><select name="monthSelector"  style="width:90px; height:26px;"><option value="jan">January</option><option value="feb">February</option><option value="Mar">March</option><option value="Apr">April</option><option value="jun">June</option><option value="july">July</option></option><option value="aug">August</option></option><option value="Seb">September</option><option value="act">October</option><option value="nov">November</option><option value="dec">December</option></select><input type="text" name="year" style="width:60px;"/><button class="glyphicon glyphicon-chevron-right btn btn-warning" name="go"></button></div></form> </div>',
+		 content:'<div id="popover-content"><form ><select id="monthSelector" class="col-sm-5" style=" height:30px;"><option value="Jan">January</option><option value="Feb">February</option><option value="Mar">March</option><option value="Apr">April</option><option value="May">May</option><option value="Jun">June</option><option value="Jul">July</option><option value="Aug">August</option><option value="Sep">September</option><option value="Oct">October</option><option value="Nov">November</option><option value="Dec">December</option></select><text>&nbsp;</text><input type="text" id="yy" class="col-sm-4"/><button type="submit" onclick="getDataForm();" class="glyphicon glyphicon-chevron-right btn btn-warning" name="go"></button></form> </div>',
 		 html:true,
-		 placement:"bottom",
+		 placement:"left",
 		
 		});
 });
